@@ -1,38 +1,360 @@
 .App {
-  text-align: center;
+  display: flex;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.Routes {
+  width: 100%;
   min-height: 100vh;
+}
+
+.Routes-sub-div {
+  display: flex;
+  width: 100%;
+}
+
+/* --------- default styling ---------- */
+
+.heading {
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 1rem 0 0.6rem 0;
+}
+
+span {
+  /* display: inline-block; */
+  margin-bottom: 1rem;
+  /* padding: 1rem; */
+  /* border: 1px solid red; */
+}
+
+.save-button {
+  display: inline-block;
+  color: white;
+  background-color: var(--main-color);
+  font-weight: 500;
+  max-width: 100px;
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 5px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.save-button:hover {
+  background-color: #113f76;
+  /* transform: scale(1.1); */
+  transition: all ease 0.2s;
+}
+
+.save-button:active {
+  transform: scale(0.96);
+  background-color: var(--main-color);
+  transition: all ease 0.1s;
+}
+
+.edit-button {
+  border: none;
+  color: black;
+  margin-right: 1rem;
+  cursor: pointer;
+  background: none;
+  font-size: 1.5rem;
+}
+
+.edit-button:hover {
+  transform: scale(1.1);
+  transition: all ease-in 0.1s;
+}
+.edit-button:active {
+  transform: scale(0.95);
+  color: var(--main-color);
+  transition: all ease-in 0.1s;
+}
+.delete-button {
+  border: none;
+  color: black;
+  cursor: pointer;
+  background: none;
+  font-size: 1.2rem;
+}
+
+.delete-button:hover {
+  transform: scale(1.2);
+  transition: all ease-in 0.1s;
+}
+
+.delete-button:active {
+  color: red;
+  transform: scale(0.95);
+  transition: all ease-in 0.1s;
+}
+
+.buttons-div {
+  display: flex;
+}
+
+.download-button {
+  padding: 1rem 1.5rem;
+  margin: 3rem;
+  display: block;
+  margin: 2rem auto;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  color: white;
+  background-color: var(--main-color);
+}
+
+form {
   display: flex;
   flex-direction: column;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+form label {
+  font-weight: 600;
+  padding: 0.5rem 0;
+  font-size: 0.8rem;
+}
+
+form input {
+  height: 35px;
+  padding-left: 1rem;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  background-color: var(--form-bg-color);
+  margin: 0 0 1rem 0;
+  transition: all 0.25s;
+}
+
+form input:focus {
+  outline: none;
+  border: 2px solid var(--main-color);
+}
+
+form input::placeholder {
+  color: #868686;
+}
+
+form textarea {
+  width: 100%;
+  resize: none;
+  outline: none;
+  background-color: var(--form-bg-color);
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 0 0 1rem 0;
+  transition: all 0.25;
+}
+
+form #about-me:focus {
+  outline: none;
+  border: 2px solid var(--main-color);
+}
+
+.form-div {
+  display: flex;
+}
+
+select {
+  height: 40px;
+  width: 100%;
+  padding-left: 1rem;
+  background-color: var(--form-bg-color);
+  outline: none;
+  border: 2px solid #ccc;
+
+  margin-bottom: 1rem;
+  transition: all 0.3s;
+}
+
+.option {
+  font-weight: 500;
+  padding: 1rem;
+}
+
+select:focus {
+  outline: none;
+  border: 2px solid var(--main-color);
+}
+/* ----- default styling ends ----------- */
+
+.Bio,
+.Education,
+.Experience,
+.Skills,
+.Projects {
+  height: 90vh;
+  padding: 1rem;
+  margin: 2rem 2rem 2rem 2rem;
+  background-color: var(--second-bg-color);
+  border-radius: 5px;
+  box-shadow: 0 0 10px #ccc;
+  font-family: sans-serif;
+  width: 540px;
+}
+
+.info-div {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: start;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.sub-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ----- education component starts ----- */
+
+.form-div input {
+  margin-top: 0.5rem;
+}
+
+/* ----- education component ends ----- */
+
+/* ---- preview component starts ----- */
+
+.Preview {
+  width: 900px;
+  margin: 1rem auto;
+  background-color: var(--second-bg-color);
+  box-shadow: 0 0 10px #ccc;
+  padding: 2rem;
+}
+
+.Preview h2 {
+  font-size: var(--sub-heading-font);
+  margin: 0.5rem 0;
+}
+.Preview h3 {
+  font-size: var(--sub-heading-font);
+  margin: 0.5rem 0;
+  border-bottom: 2px solid black;
+  padding: 0.5rem 0.5rem 0.5rem 0;
+}
+
+.Preview p {
+  text-align: justify;
+  font-size: var(--sub-heading-font);
+}
+
+/* ---- preview component ends ----- */
+
+/* ----- bio section preview starts ----- */
+
+.BioSection {
+  font-size: var(--sub-heading-font);
+}
+
+.BioSection h1 {
+  font-size: var(--heading-font);
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+
+.BioSection .contactInfo {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.BioSection span {
+  padding: 0 0.5rem;
+}
+/* ----- bio section preview ends ----- */
+
+/* ----- experience section start ----- */
+
+/* ----- experience section end ----- */
+
+/* ----- skills section start ----- */
+.SkillsSection ul {
+  /* list-style: none; */
+  margin-left: 2rem;
+}
+/* ----- skills section end ----- */
+
+.BioInfo,
+.EducationInfo,
+.ExperienceInfo,
+.ProjectInfo {
+  background-color: var(--light-blue-bg);
+  margin: 1rem 1rem 1rem 0;
+  border-radius: 5px;
+  padding: 1rem;
+  width: 350px;
+  height: fit-content;
+}
+
+.BioInfo p,
+.EducationInfo p,
+.ExperienceInfo p,
+.ProjectInfo p {
+  margin: 0.8rem;
+  font-size: 0.9rem;
+}
+.BioInfo:hover,
+.EducationInfo:hover,
+.ExperienceInfo:hover,
+.ProjectInfo:hover {
+  background-color: rgba(204, 222, 233, 0.929);
+}
+
+.info-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: -0.5rem;
+}
+
+.info-top h2 {
+  margin-left: 1rem;
+  color: var(--main-color);
+  font-size: 1rem;
+}
+
+.SkillsInfo {
+  width: 70%;
+  margin: 2rem 2rem 2rem 0;
+  /* border: 2px solid #ccc; */
+  border-radius: 5px;
+  padding: 1rem;
+  display: flex;
+  align-content: start;
+
+  flex-wrap: wrap;
+  /* box-shadow: 0 0 10px #ccc; */
+}
+
+.SkillsInfo .each-skill-div {
+  height: 40px;
+  margin: 1rem;
+  background-color: var(--light-blue-bg);
+  border-radius: 5px;
+
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.each-skill-div h2 {
+  font-size: 1rem;
+  padding: 1rem 1rem 1rem 1.5rem;
+  color: rgba(0, 0, 0, 0.735);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.each-skill-div button {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  font-weight: bolder;
+  border-left: 1px solid rgba(0, 0, 0, 0.735);
+  color: rgba(0, 0, 0, 0.735);
+  cursor: pointer;
 }
+
+/* media queires */

@@ -1,0 +1,66 @@
+.Sidebar {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+  width: 200px;
+  /* position: fixed; */
+
+  background-color: var(--second-bg-color);
+  transition: all 0.5s;
+}
+
+.logo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 2rem 0 1rem 0;
+}
+
+.logo .image {
+  width: 100px;
+}
+
+.logo .bar-icon {
+  height: 100%;
+
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+.link {
+  height: 50px;
+  display: flex;
+  align-items: center;
+
+  transition: all 0.3s;
+}
+
+.link .icon {
+  flex: 30%;
+  display: grid;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.link .link-text {
+  flex: 70%;
+  display: flex;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.link:hover {
+  background-color: var(--third-bg-color);
+}
+
+.active {
+  background-color: var(--third-bg-color);
+}
+
+.link-text,
+.icon {
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
