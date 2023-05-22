@@ -1,21 +1,25 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const BioSection = () => {
+  const bio = useSelector((state) => state.bio);
+
   return (
     <div className="BioSection">
-      <h1>Madhan Mohan Gangadhari</h1>
+      <h1>
+        {bio.firstName} {bio.lastName}
+      </h1>
       <div className="contactInfo">
-        <span>mrmadhan09@gmail.com</span>
-        <span>334-557-4337</span>
+        <span>{bio.email}</span>
+        <span>{bio.phoneNumber}</span>
       </div>
       <div className="aboutMe">
-        <h3>About me</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe fugit
-          ipsum adipisci quasi dolorem praesentium obcaecati at esse magnam
-          tenetur molestias quia quos asperiores, repudiandae molestiae tempore
-          quisquam doloribus repellat.
-        </p>
+        {Object.keys(bio).length !== 0 && bio.aboutMe.length !== 0 && (
+          <>
+            <h3>About me</h3>
+            <p>{bio.aboutMe}</p>
+          </>
+        )}
       </div>
     </div>
   );

@@ -1,21 +1,27 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const SkillsSection = () => {
+  const skills = useSelector((state) => state.skill.data);
+  const technicalSkills = skills.filter((obj) => obj.type == "technical skill");
+  const softSkills = skills.filter((obj) => obj.type == "soft skill");
+
   return (
     <div className="SkillsSection">
-      <h3>Skills</h3>
-      <h2>Technical skills</h2>
+      {(technicalSkills.length !== 0 || softSkills.length !== 0) && (
+        <h3>Skills</h3>
+      )}
+      {technicalSkills.length !== 0 && <h2>Technical Skill</h2>}
       <ul>
-        <li>java</li>
-        <li>python</li>
-        <li>react</li>
-        <li>Spring boot</li>
+        {technicalSkills.map((obj) => (
+          <li>{obj.name}</li>
+        ))}
       </ul>
-      <h2>Soft skills</h2>
+      {softSkills.length !== 0 && <h2>Soft Skill</h2>}
       <ul>
-        <li>thinking</li>
-        <li>eating</li>
-        <li>sleeping</li>
+        {softSkills.map((obj) => (
+          <li>{obj.name}</li>
+        ))}
       </ul>
     </div>
   );

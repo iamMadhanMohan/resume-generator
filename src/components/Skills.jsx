@@ -9,10 +9,7 @@ const Skills = () => {
   const dispatch = useDispatch();
   const skillData = useSelector((state) => state.skill.data);
 
-  const [skill, setSkill] = useState({
-    name: "",
-    type: "",
-  });
+  const [skill, setSkill] = useState({});
 
   const skillComponent = skillData.map((item, id) => (
     <SkillsInfo key={id} id={id} skill={item} />
@@ -60,6 +57,7 @@ const Skills = () => {
             value={skill.type}
             onChange={handleChange}
           >
+            <option value="---">---</option>
             {skillType.map((item, key) => {
               return <option key={key}>{item}</option>;
             })}

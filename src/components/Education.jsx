@@ -8,16 +8,7 @@ const Education = () => {
   const dispatch = useDispatch();
   const educationData = useSelector((state) => state.education.data);
 
-  const [education, setEducation] = useState({
-    educationLevel: "",
-    schoolName: "",
-    score: "",
-    city: "",
-    state: "",
-    country: "",
-    startDate: "",
-    endDate: "",
-  });
+  const [education, setEducation] = useState({});
 
   const [isEdit, setIsEdit] = useState({
     status: false,

@@ -8,13 +8,7 @@ const Experience = () => {
   const dispatch = useDispatch();
   const experienceData = useSelector((state) => state.experience.data);
 
-  const [experience, setExperience] = useState({
-    role: "",
-    organization: "",
-    startDate: "",
-    endDate: "",
-    aboutWork: "",
-  });
+  const [experience, setExperience] = useState({});
 
   const [isEdit, setIsEdit] = useState({
     status: false,

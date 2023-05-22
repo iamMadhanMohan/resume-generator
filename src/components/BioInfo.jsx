@@ -3,18 +3,11 @@ import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { deleteBio } from "../reducers/bioSlice";
 
-const BioInfo = ({ id, bio, setBio, setIsEdit }) => {
+const BioInfo = ({ bio }) => {
   const dispatch = useDispatch();
 
   const deleteOnCLick = () => {
-    dispatch(deleteBio(id));
-  };
-
-  const editOnClick = () => {
-    setIsEdit((prev) => {
-      return { id: id, status: true };
-    });
-    setBio(bio);
+    dispatch(deleteBio());
   };
 
   return (
@@ -23,9 +16,7 @@ const BioInfo = ({ id, bio, setBio, setIsEdit }) => {
         <h2 className="heading">PERSON DETAILS</h2>
         <div className="buttons-div">
           <button className="edit-button">
-            <div className="button-icon">
-              <FaEdit onClick={editOnClick} />
-            </div>
+            <div className="button-icon">{/* <FaEdit /> */}</div>
           </button>
           <button className="delete-button">
             <div className="button-icon">

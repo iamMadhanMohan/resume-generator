@@ -7,12 +7,7 @@ const Projects = () => {
   const dispatch = useDispatch();
   const projectData = useSelector((state) => state.project.data);
 
-  const [project, setProject] = useState({
-    name: "",
-    description: "",
-    codeLink: "",
-    siteLink: "",
-  });
+  const [project, setProject] = useState({});
 
   const [isEdit, setIsEdit] = useState({
     status: false,

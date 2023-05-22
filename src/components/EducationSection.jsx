@@ -1,42 +1,22 @@
 import React from "react";
 
-const EducationSection = () => {
+const EducationSection = ({ education }) => {
   return (
     <div className="EducationSection">
       <h3>Education</h3>
       <div className="sub-div">
-        <h2>Master's Degree in Computer science</h2>
+        <h2>{education.educationLevel}</h2>
         <span>
-          <i>jan 23 - jan 24</i>
+          <i>
+            {education.startDate} - {education.endDate}
+          </i>
         </span>
       </div>
+      <p>{education.score && <i>score : {education.score}</i>}</p>
+      <p>{education.schoolName}</p>
       <p>
-        <i>score : 4.0</i>
+        {education.city}, {education.state}, {education.country}
       </p>
-      <p>Auburn University Montgomery</p>
-      <p>Montgomery, Alabama, United States</p>
-      <div className="sub-div">
-        <h2>Master's Degree in Computer science</h2>
-        <span>
-          <i>jan 23 - jan 24</i>
-        </span>
-      </div>
-      <p>
-        <i>score : 4.0</i>
-      </p>
-      <p>Auburn University Montgomery</p>
-      <p>Montgomery, Alabama, United States</p>
-      <div className="sub-div">
-        <h2>Master's Degree in Computer science</h2>
-        <span>
-          <i>jan 23 - jan 24</i>
-        </span>
-      </div>
-      <p>
-        <i>score : 4.0</i>
-      </p>
-      <p>Auburn University Montgomery</p>
-      <p>Montgomery, Alabama, United States</p>
     </div>
   );
 };

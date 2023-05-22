@@ -12,7 +12,7 @@
   width: 100%;
 }
 
-/* --------- default styling ---------- */
+/* --------- default styling start---------- */
 
 .heading {
   font-weight: 600;
@@ -22,11 +22,12 @@
 }
 
 span {
-  /* display: inline-block; */
   margin-bottom: 1rem;
-  /* padding: 1rem; */
-  /* border: 1px solid red; */
 }
+
+/* --------- default styling end---------- */
+
+/* ---------- buttons styling start ------------- */
 
 .save-button {
   display: inline-block;
@@ -43,7 +44,6 @@ span {
 
 .save-button:hover {
   background-color: #113f76;
-  /* transform: scale(1.1); */
   transition: all ease 0.2s;
 }
 
@@ -66,11 +66,13 @@ span {
   transform: scale(1.1);
   transition: all ease-in 0.1s;
 }
+
 .edit-button:active {
   transform: scale(0.95);
   color: var(--main-color);
   transition: all ease-in 0.1s;
 }
+
 .delete-button {
   border: none;
   color: black;
@@ -105,6 +107,10 @@ span {
   color: white;
   background-color: var(--main-color);
 }
+
+/* ---------- buttons styling end ------------- */
+
+/* ----------- form styling start --------------- */
 
 form {
   display: flex;
@@ -159,6 +165,10 @@ form #about-me:focus {
   display: flex;
 }
 
+/* ----------- form styling end --------------- */
+
+/* ------------ select styling start ------------ */
+
 select {
   height: 40px;
   width: 100%;
@@ -180,7 +190,8 @@ select:focus {
   outline: none;
   border: 2px solid var(--main-color);
 }
-/* ----- default styling ends ----------- */
+
+/* ------------ select styling end ------------ */
 
 .Bio,
 .Education,
@@ -268,13 +279,8 @@ select:focus {
 }
 /* ----- bio section preview ends ----- */
 
-/* ----- experience section start ----- */
-
-/* ----- experience section end ----- */
-
 /* ----- skills section start ----- */
 .SkillsSection ul {
-  /* list-style: none; */
   margin-left: 2rem;
 }
 /* ----- skills section end ----- */

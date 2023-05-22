@@ -1,18 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  data: [
-    {
-      educationLevel: "test",
-      schoolName: "your school name",
-      score: "your score",
-      city: "your city",
-      state: "your state",
-      country: "your country",
-      startDate: "your date",
-      endDate: "your date",
-    },
-  ],
+  data: [],
 };
 
 const educationSlice = createSlice({

@@ -1,28 +1,20 @@
 import React, { useState } from "react";
 import BioInfo from "./BioInfo";
 import { useDispatch, useSelector } from "react-redux";
-import { addBio, updateBio } from "../reducers/bioSlice";
+import { addBio } from "../reducers/bioSlice";
 
 const Bio = () => {
-  const [bio, setBio] = useState({});
-
-  const [isEdit, setIsEdit] = useState({
-    status: false,
-    id: "",
+  const [bio, setBio] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    aboutMe: "",
   });
 
-  const bioData = useSelector((state) => state.bio.data);
   const dispatch = useDispatch();
 
-  const bioInfoComponent = bioData.map((item, id) => (
-    <BioInfo
-      key={id}
-      bio={item}
-      id={id}
-      setBio={setBio}
-      setIsEdit={setIsEdit}
-    />
-  ));
+  const bioData = useSelector((state) => state.bio);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -34,18 +26,9 @@ const Bio = () => {
     });
   };
 
-  const handleSubmit = () => {
-    if (isEdit.status) {
-      setIsEdit((prev) => {
-        return {
-          id: "",
-          status: false,
-        };
-      });
-      dispatch(updateBio({ index: isEdit.id, data: bio }));
-    } else {
-      dispatch(addBio(bio));
-    }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    dispatch(addBio(bio));
 
     setBio({
       firstName: "",
@@ -121,7 +104,9 @@ const Bio = () => {
           </button>
         </form>
       </div>
-      <div className="info-div">{bioInfoComponent}</div>
+      <div className="info-div">
+        {Object.keys(bioData).length !== 0 && <BioInfo bio={bioData} />}
+      </div>
     </div>
   );
 };
