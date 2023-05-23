@@ -3,7 +3,6 @@ import React from "react";
 const EducationSection = ({ education }) => {
   return (
     <div className="EducationSection">
-      <h3>Education</h3>
       <div className="sub-div">
         <h2>{education.educationLevel}</h2>
         <span>

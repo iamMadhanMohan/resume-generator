@@ -31,16 +31,19 @@ const Preview = () => {
         <div className="Preview">
           <BioSection />
 
+          <h3>Experience</h3>
           {experience.map((obj, id) => (
             <ExperienceSection key={id} experience={obj} />
           ))}
 
+          <h3>Projects</h3>
           {project.map((obj, id) => (
             <ProjectSection key={id} project={obj} />
           ))}
 
           <SkillsSection />
 
+          <h3>Education</h3>
           {education.map((obj, id) => (
             <EducationSection key={id} education={obj} />
           ))}

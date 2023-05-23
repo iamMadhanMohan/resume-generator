@@ -1,10 +1,11 @@
 .App {
   display: flex;
+  height: 100vh;
 }
 
 .Routes {
   width: 100%;
-  min-height: 100vh;
+  overflow-y: scroll;
 }
 
 .Routes-sub-div {
@@ -214,6 +215,8 @@ select:focus {
   align-content: start;
   margin-top: 1rem;
   width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
 }
 
 .sub-div {
@@ -326,14 +329,11 @@ select:focus {
 .SkillsInfo {
   width: 70%;
   margin: 2rem 2rem 2rem 0;
-  /* border: 2px solid #ccc; */
   border-radius: 5px;
   padding: 1rem;
   display: flex;
   align-content: start;
-
   flex-wrap: wrap;
-  /* box-shadow: 0 0 10px #ccc; */
 }
 
 .SkillsInfo .each-skill-div {
@@ -341,7 +341,6 @@ select:focus {
   margin: 1rem;
   background-color: var(--light-blue-bg);
   border-radius: 5px;
-
   display: flex;
   align-items: center;
 }
@@ -364,3 +363,59 @@ select:focus {
 }
 
 /* media queires */
+
+@media (max-width: 650px) {
+  :root {
+    font-size: 12px;
+  }
+
+  .Routes-sub-div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Bio,
+  .Education,
+  .Experience,
+  .Skills,
+  .Projects {
+    padding: 1rem;
+    margin: 2rem auto;
+    background-color: var(--second-bg-color);
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ccc;
+    font-family: sans-serif;
+    width: 300px;
+    height: fit-content;
+  }
+
+  .info-div {
+    margin-top: 1rem;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .BioInfo,
+  .EducationInfo,
+  .ExperienceInfo,
+  .ProjectInfo {
+    background-color: var(--light-blue-bg);
+    margin: 1rem auto;
+    border-radius: 5px;
+    padding: 1rem;
+    width: 300px;
+    height: fit-content;
+  }
+
+  form input {
+    font-size: 1rem;
+    height: 30px;
+    padding-left: 1rem;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    background-color: var(--form-bg-color);
+    margin: 0 0 1rem 0;
+    transition: all 0.25s;
+  }
+}
