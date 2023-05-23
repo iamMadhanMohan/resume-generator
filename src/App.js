@@ -18,7 +18,7 @@ function App() {
         <Sidebar />
         <div className="Routes">
           <Routes>
-            <Route path="" element={<Bio />} />
+            <Route path="*" element={<Bio />} />
 
             <Route path="/bio" element={<Bio />} />
 
@@ -35,8 +35,6 @@ function App() {
             <Route path="/preview" element={<Preview />} />
 
             <Route path="/help" element={<Help />} />
-
-            {/* <Route path="*" element={<h1>Page not found</h1>} /> */}
           </Routes>
         </div>
       </BrowserRouter>
