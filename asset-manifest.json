@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/resume-generator/static/css/main.0fecf248.css",
-    "main.js": "/resume-generator/static/js/main.282dec9d.js",
+    "main.js": "/resume-generator/static/js/main.3a70b0f0.js",
     "index.html": "/resume-generator/index.html",
     "main.0fecf248.css.map": "/resume-generator/static/css/main.0fecf248.css.map",
-    "main.282dec9d.js.map": "/resume-generator/static/js/main.282dec9d.js.map"
+    "main.3a70b0f0.js.map": "/resume-generator/static/js/main.3a70b0f0.js.map"
   },
   "entrypoints": [
     "static/css/main.0fecf248.css",
-    "static/js/main.282dec9d.js"
+    "static/js/main.3a70b0f0.js"
   ]
 }
