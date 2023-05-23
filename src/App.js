@@ -36,7 +36,7 @@ function App() {
 
             <Route path="/help" element={<Help />} />
 
-            <Route path="*" element={<h1>Page not found</h1>} />
+            <Route path="*" element={<Bio />} />
           </Routes>
         </div>
       </BrowserRouter>
