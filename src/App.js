@@ -18,7 +18,7 @@ function App() {
         <Sidebar />
         <div className="Routes">
           <Routes>
-            <Route path="/" element={<Bio />} />
+            <Route path="" element={<Bio />} />
 
             <Route path="/bio" element={<Bio />} />
 
