@@ -5,8 +5,10 @@ const ProjectSection = ({ project }) => {
     <div className="ProjectSection">
       <h2>{project.name}</h2>
       <p>{project.description}</p>
-      <span>Code : {project.codeLink}</span>
-      <span style={{ marginLeft: "1rem" }}>Site :{project.siteLink}</span>
+      {project.codeLink && <span>Code : {project.codeLink}</span>}
+      {project.siteLink && (
+        <span style={{ marginLeft: "1rem" }}>Site :{project.siteLink}</span>
+      )}
     </div>
   );
 };

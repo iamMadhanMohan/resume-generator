@@ -25,7 +25,8 @@ const Experience = () => {
     });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
     if (isEdit.status) {
       setIsEdit((prev) => {
         return {
@@ -61,7 +62,7 @@ const Experience = () => {
     <div className="Routes-sub-div">
       <div className="Experience">
         <h1 className="heading">Work Experience</h1>
-        <form action="">
+        <form onSubmit={handleSubmit}>
           <label htmlFor="role-name">Role Name</label>
           <input
             type="text"
@@ -84,32 +85,30 @@ const Experience = () => {
             required
           />
 
-          <div className="form-div">
-            <div>
-              <label htmlFor="start-date" className="label">
-                Start Date
-              </label>
-              <input
-                type="date"
-                id="start-date"
-                name="startDate"
-                value={experience.startDate}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="end-date" className="label">
-                End Date
-              </label>
-              <input
-                type="date"
-                id="end-date"
-                name="endDate"
-                value={experience.endDate}
-                onChange={handleChange}
-              />
-            </div>
+          <div>
+            <label htmlFor="start-date" className="label">
+              Start Date
+            </label>
+            <input
+              type="month"
+              id="start-date"
+              name="startDate"
+              value={experience.startDate}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="end-date" className="label">
+              End Date
+            </label>
+            <input
+              type="month"
+              id="end-date"
+              name="endDate"
+              value={experience.endDate}
+              onChange={handleChange}
+            />
           </div>
 
           <label htmlFor="about-experience">About Work</label>
@@ -122,8 +121,8 @@ const Experience = () => {
             onChange={handleChange}
           ></textarea>
 
-          <button className="save-button" onClick={handleSubmit}>
-            Add
+          <button className="save-button" type="submit">
+            {isEdit.status ? "UPDATE" : "ADD"}
           </button>
         </form>
       </div>

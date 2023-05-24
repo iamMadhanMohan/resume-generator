@@ -34,7 +34,8 @@ const Projects = () => {
     });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
     if (isEdit.status) {
       setIsEdit((prev) => {
         return {
@@ -58,7 +59,7 @@ const Projects = () => {
     <div className="Routes-sub-div">
       <div className="Projects">
         <h1 className="heading">Project Details</h1>
-        <form action="">
+        <form onSubmit={handleSubmit}>
           <label htmlFor="project-name">Project Name</label>
           <input
             type="text"
@@ -101,8 +102,8 @@ const Projects = () => {
             placeholder="project web link(optional)"
           />
 
-          <button className="save-button" onClick={handleSubmit}>
-            Add
+          <button className="save-button" type="submit">
+            {isEdit.status ? "UPDATE" : "ADD"}
           </button>
         </form>
       </div>

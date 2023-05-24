@@ -38,7 +38,8 @@ const Education = () => {
     });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
     if (isEdit.status) {
       setIsEdit((prev) => {
         return {
@@ -66,7 +67,7 @@ const Education = () => {
     <div className="Routes-sub-div">
       <div className="Education">
         <h1 className="heading">Education Details</h1>
-        <form action="">
+        <form onSubmit={handleSubmit}>
           <label htmlFor="education-level" className="label">
             Education Level
           </label>
@@ -77,7 +78,7 @@ const Education = () => {
             name="educationLevel"
             value={education.educationLevel}
             onChange={handleChange}
-            // required
+            required
           />
 
           <label htmlFor="school-name" className="label">
@@ -104,32 +105,30 @@ const Education = () => {
             onChange={handleChange}
           />
 
-          <div className="form-div">
-            <div>
-              <label htmlFor="start-date" className="label">
-                Start Date
-              </label>
-              <input
-                type="date"
-                id="start-date"
-                name="startDate"
-                value={education.startDate}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="end-date" className="label">
-                End Date
-              </label>
-              <input
-                type="date"
-                id="end-date"
-                name="endDate"
-                value={education.endDate}
-                onChange={handleChange}
-              />
-            </div>
+          <div>
+            <label htmlFor="start-date" className="label">
+              Start Date
+            </label>
+            <input
+              type="month"
+              id="start-date"
+              name="startDate"
+              value={education.startDate}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="end-date" className="label">
+              End Date
+            </label>
+            <input
+              type="month"
+              id="end-date"
+              name="endDate"
+              value={education.endDate}
+              onChange={handleChange}
+            />
           </div>
 
           <label htmlFor="address" className="label">
@@ -161,7 +160,7 @@ const Education = () => {
             required
           />
 
-          <button className="save-button" onClick={handleSubmit}>
+          <button className="save-button" type="submit">
             {isEdit.status ? "UPDATE" : "ADD"}
           </button>
         </form>

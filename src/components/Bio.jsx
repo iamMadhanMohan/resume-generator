@@ -43,7 +43,7 @@ const Bio = () => {
     <div className="Routes-sub-div">
       <div className="Bio">
         <h1 className="heading">Personal Information</h1>
-        <form>
+        <form onSubmit={handleSubmit}>
           <label htmlFor="first-name">First Name</label>
           <input
             type="text"
@@ -54,6 +54,7 @@ const Bio = () => {
             onChange={handleChange}
             required
           />
+          {bio.firstName.length == 0 && <span>first name cannot be empty</span>}
 
           <label htmlFor="last-name">Last Name</label>
           <input
@@ -99,7 +100,7 @@ const Bio = () => {
             onChange={handleChange}
           ></textarea>
 
-          <button className="save-button" onClick={handleSubmit}>
+          <button className="save-button" type="submit">
             Save
           </button>
         </form>

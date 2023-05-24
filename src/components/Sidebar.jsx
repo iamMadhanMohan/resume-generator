@@ -10,6 +10,8 @@ import { VscOpenPreview } from "react-icons/vsc";
 import { BiHelpCircle } from "react-icons/bi";
 import { SlGraduation } from "react-icons/sl";
 
+import logo from "../logo.png";
+
 const navItems = [
   {
     path: "/bio",
@@ -54,29 +56,20 @@ const navItems = [
 ];
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isClicked, setIsClicked] = useState(false);
 
-  const toggle = () => setIsOpen(!isOpen);
+  const handleClick = () => {
+    setIsClicked(!isClicked);
+  };
 
   return (
-    <div className="Sidebar" style={{ width: isOpen ? "200px" : "70px" }}>
+    <div className="Sidebar">
       <div className="logo">
-        <img
-          src="./images/logo.png"
-          alt="logo"
-          className="image"
-          style={{ display: isOpen ? "" : "none" }}
-        />
-        <FaBars
-          className="bar-icon"
-          onClick={toggle}
-          style={{
-            marginTop: isOpen ? "" : "1rem",
-            marginBottom: isOpen ? "" : "1rem",
-          }}
-        />
+        <img src={logo} alt="logo" className="image" />
+
+        <FaBars className="bar-icon" onClick={handleClick} />
       </div>
-      <div className="menu-items">
+      <div className={isClicked ? "menu-items hide-menu" : "menu-items"}>
         {navItems.map((item, index) => (
           <NavLink
             key={index}
@@ -84,15 +77,8 @@ const Sidebar = () => {
             className="link"
             activeclassName="active"
           >
-            <div className="icon" style={{ margin: isOpen ? "" : "0 auto" }}>
-              {item.icon}
-            </div>
-            <div
-              className="link-text"
-              style={{ display: isOpen ? "block" : "none" }}
-            >
-              {item.name}
-            </div>
+            <div className="icon">{item.icon}</div>
+            <div className="link-text">{item.name}</div>
           </NavLink>
         ))}
       </div>

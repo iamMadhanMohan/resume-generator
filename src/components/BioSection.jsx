@@ -10,8 +10,8 @@ const BioSection = () => {
         {bio.firstName} {bio.lastName}
       </h1>
       <div className="contactInfo">
-        <span>{bio.email}</span>
-        <span>{bio.phoneNumber}</span>
+        Email:<span>{bio.email}</span>
+        Phone:<span>{bio.phoneNumber}</span>
       </div>
       <div className="aboutMe">
         {Object.keys(bio).length !== 0 && bio.aboutMe.length !== 0 && (

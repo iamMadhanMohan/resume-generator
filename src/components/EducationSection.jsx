@@ -1,4 +1,5 @@
 import React from "react";
+import dateConverter from "../dateConverter";
 
 const EducationSection = ({ education }) => {
   return (
@@ -7,7 +8,8 @@ const EducationSection = ({ education }) => {
         <h2>{education.educationLevel}</h2>
         <span>
           <i>
-            {education.startDate} - {education.endDate}
+            {dateConverter(education.startDate)} -{" "}
+            {education.endDate ? dateConverter(education.endDate) : "present"}
           </i>
         </span>
       </div>

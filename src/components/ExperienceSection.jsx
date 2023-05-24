@@ -1,4 +1,5 @@
 import React from "react";
+import dateConverter from "../dateConverter";
 
 const ExperienceSection = ({ experience }) => {
   return (
@@ -9,7 +10,8 @@ const ExperienceSection = ({ experience }) => {
         </h2>
         <p>
           <i>
-            {experience.startDate} - {experience.endDate}
+            {dateConverter(experience.startDate)} -{" "}
+            {experience.endDate ? dateConverter(experience.endDate) : "present"}
           </i>
         </p>
       </div>

@@ -24,7 +24,7 @@
 
 .logo .bar-icon {
   height: 100%;
-
+  display: none;
   font-size: 1.2rem;
   color: var(--text-color);
 }
@@ -63,4 +63,28 @@
 .icon {
   font-size: 1.2rem;
   color: var(--text-color);
+}
+
+@media (max-width: 650px) {
+  .Sidebar {
+    position: fixed;
+    bottom: 0;
+    min-height: 20px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.904);
+  }
+
+  .logo .bar-icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hide-menu {
+    display: none;
+  }
+
+  .logo {
+    height: fit-content;
+    margin: 0;
+  }
 }

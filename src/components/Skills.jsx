@@ -3,8 +3,6 @@ import SkillsInfo from "./SkillsInfo";
 import { useSelector, useDispatch } from "react-redux";
 import { addSkill } from "../reducers/skillSlice";
 
-const skillType = ["soft skill", "technical skill"];
-
 const Skills = () => {
   const dispatch = useDispatch();
   const skillData = useSelector((state) => state.skill.data);
@@ -19,26 +17,24 @@ const Skills = () => {
     const { name, value } = event.target;
     setSkill((prev) => {
       return {
-        ...prev,
         [name]: value,
       };
     });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
     dispatch(addSkill(skill));
 
-    setSkill({
-      name: "",
-      type: "",
-    });
+    setSkill({ name: "" });
   };
 
   return (
     <div className="Routes-sub-div">
       <div className="Skills">
         <h1 className="heading">Skills Details</h1>
-        <form action="">
+
+        <form onSubmit={handleSubmit}>
           <label htmlFor="skill-name">Skill Name</label>
           <input
             type="text"
@@ -50,24 +46,12 @@ const Skills = () => {
             required
           />
 
-          <label htmlFor="skill">Skill Type</label>
-          <select
-            id="skill"
-            name="type"
-            value={skill.type}
-            onChange={handleChange}
-          >
-            <option value="---">---</option>
-            {skillType.map((item, key) => {
-              return <option key={key}>{item}</option>;
-            })}
-          </select>
-
-          <button className="save-button" onClick={handleSubmit}>
+          <button className="save-button" type="submit">
             Add
           </button>
         </form>
       </div>
+
       <div className="info-div">{skillComponent}</div>
     </div>
   );
