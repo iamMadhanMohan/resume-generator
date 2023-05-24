@@ -417,4 +417,9 @@ select:focus {
   .App {
     display: block;
   }
+
+  .Preview {
+    width: 100%;
+    padding: 0;
+  }
 }
