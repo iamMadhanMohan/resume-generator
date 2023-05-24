@@ -361,11 +361,13 @@ select:focus {
 
   .Routes {
     overflow: visible;
+    margin-top: 6rem;
   }
 
   .Routes-sub-div {
     display: flex;
     flex-direction: column;
+    /* margin-top: 5rem; */
   }
 
   .Bio,
@@ -388,7 +390,6 @@ select:focus {
     width: 100%;
     height: fit-content;
     overflow: visible;
-    margin-bottom: 90px;
   }
 
   .BioInfo,

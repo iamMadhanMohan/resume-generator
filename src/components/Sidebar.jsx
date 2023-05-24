@@ -56,7 +56,7 @@ const navItems = [
 ];
 
 const Sidebar = () => {
-  const [isClicked, setIsClicked] = useState(false);
+  const [isClicked, setIsClicked] = useState(true);
 
   const handleClick = () => {
     setIsClicked(!isClicked);
@@ -76,6 +76,7 @@ const Sidebar = () => {
             to={item.path}
             className="link"
             activeclassName="active"
+            onClick={() => setIsClicked(!isClicked)}
           >
             <div className="icon">{item.icon}</div>
             <div className="link-text">{item.name}</div>
