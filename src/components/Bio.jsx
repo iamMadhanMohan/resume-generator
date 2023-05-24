@@ -82,7 +82,6 @@ const Bio = () => {
           <input
             type="tel"
             placeholder="xxx-xxx-xxxx"
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             id="phone-number"
             name="phoneNumber"
             value={bio.phoneNumber}
