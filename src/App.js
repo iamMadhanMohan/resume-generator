@@ -14,7 +14,7 @@ import Help from "./components/Help";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename="/resume-generator">
         <Sidebar />
         <div className="Routes">
           <Routes>
